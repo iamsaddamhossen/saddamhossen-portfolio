@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextJs 15 Headless WordPress Blog - GraphQl
+Headless WordPress blog with Next.js 15 App Router and TypeScript
 
-## Getting Started
+![App Screenshot](https://github.com/RaddyTheBrand/60_NextJs-Headless_WordPress_Blog/blob/main/screenshot.jpg)
 
-First, run the development server:
+## Installation Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Create a `.env` file**  
+   In the root directory of your project, create a new `.env` file.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Add the following environment variable:**  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```env
+   WORDPRESS_URL="https://yourwebsite.com"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Install the official WordPress GraphQl Plugin:**  
+  [Official GraphQl Plugin](https://www.wpgraphql.com/)
 
-## Learn More
+4. **Install the project:** 
+  In the root directory of your project, run the following command:
 
-To learn more about Next.js, take a look at the following resources:
+  `npm install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Run the project locally** 
+  In the root directory of your project, run the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  `npm run dev`
 
-## Deploy on Vercel
+Now you should be able to visit your project under: localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Watch the full YouTube tutorial](https://raddy.dev)
+
+[Visit My Website](https://raddy.dev)
+
+
+That's all.

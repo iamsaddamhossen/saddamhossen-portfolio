@@ -1,11 +1,10 @@
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import Footer from "./components/footer";
-import Header from "./components/header";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Saddam Hossen - WordPress Developer (09 Years Experience)",
@@ -19,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}  antialiased`}>
-        <div className="max-w-[1100px] p-4 md:p-10 mx-auto bg-background min-h-screen">
+      <body className={`${inter.className} antialiased`}>
+        <div className="max-w-[1200px] p-4 md:p-10 mx-auto bg-background min-h-screen">
           <Header />
           {children}
           <Footer />

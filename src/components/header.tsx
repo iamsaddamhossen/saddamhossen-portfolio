@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+export function Header() {
   return (
-    <header className="mb-[66px] flex justify-between content-center">
+    <header className="flex justify-between mb-[66px] content-center">
       <div className="font-bold text-2xl">
         <Link href={"/"}>
           <Image
@@ -26,10 +26,7 @@ export default function Header() {
             <Link href={"/blog"}>Blog</Link>
           </li>
           <li>
-            <Link href={"/"}>Code Snippets</Link>
-          </li>
-          <li>
-            <Link href={"/"}>Plugins</Link>
+            <Link href={"/about"}>Code Snippets</Link>
           </li>
           <li>
             <Link href={"/contact"}>Contact</Link>

@@ -1,7 +1,7 @@
 # NextJs 15 Headless WordPress Blog - GraphQl
 Headless WordPress blog with Next.js 15 App Router and TypeScript
 
-// # ![App Screenshot](https://github.com/RaddyTheBrand/60_NextJs-Headless_WordPress_Blog/blob/main/screenshot.jjpg)
+// # ![App Screenshot](https://github.com/RaddyTheBrand/60_NextJs-Headless_WordPress_Blog/blob/main/screenshot.jpg)
 
 ## Installation Instructions
 

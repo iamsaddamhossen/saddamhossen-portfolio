@@ -41,7 +41,7 @@ A **modern headless WordPress blog** built with **Next.js 15 App Router** and **
 ```bash
 git clone https://github.com/iamsaddamhossen/saddamhossen-portfolio.git
 
-cd saddamhossen-nextjs-blog
+cd saddamhossen-portfolio
 
 2. Install dependencies
 npm install

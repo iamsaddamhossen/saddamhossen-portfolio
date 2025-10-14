@@ -52,31 +52,24 @@ Create a .env file in the root directory:
 
 WORDPRESS_URL="https://saddamhossen.dev/"
 
-
 Replace the URL with your WordPress site where WPGraphQL is installed.
 
 4. Run the development server
 npm run dev
 
-
 Visit: http://localhost:3000
 
-Deployment
+**Deployment**
 
-Push the repository to GitHub
+1. Push the repository to GitHub
+2. Connect it to Vercel
+3. Add WORDPRESS_URL in the Vercel environment variables
+4. Deploy and visit your live site
 
-Connect it to Vercel
-
-Add WORDPRESS_URL in the Vercel environment variables
-
-Deploy and visit your live site
-
-WordPress Requirements
+**WordPress Requirements**
 
 WordPress 5.9+
-
 WPGraphQL plugin installed and active: https://www.wpgraphql.com/
-
 Recommended: ACF (Advanced Custom Fields) for custom content
 
 Project Structure
@@ -87,14 +80,10 @@ Project Structure
 /pages         # Legacy pages (if any)
 
 Author
-
 Saddam Hossen
-
 Website: https://saddamhossen.dev
-
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/iamsaddamhossen
 
 License
-
 Open source under the MIT License
 ```

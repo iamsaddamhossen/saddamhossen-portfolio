@@ -23,7 +23,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f4148]/95 via-[#0f4148]/70 to-[#0f4148]/0" />
 
         <div className="relative z-10 max-w-[1200px] mx-auto w-full px-6 md:px-10 flex items-center">
-          <div className="w-full md:w-3/5 text-left text-white flex flex-col justify-center">
+          <div className="w-full md:w-3/5 text-left text-white flex flex-col justify-center py-10 md:py-0">
+            {/* Added py-10 for top/bottom spacing on mobile */}
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-xl">
               Hi, I&apos;m <span className="text-white">Saddam Hossen</span>.
             </h1>
@@ -38,7 +39,8 @@ export function Hero() {
               are easy to manage.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4 pb-10 md:pb-0">
+              {/* Added pb-10 for bottom spacing on mobile */}
               <button
                 onClick={() => setShowCalendly(true)}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-[#23A7BF] to-[#1F9EB2] text-white font-semibold px-6 py-3 shadow-lg hover:scale-105 transition-transform duration-300"

@@ -29,14 +29,13 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-[850px]">
-              I craft fast, secure, and scalable WordPress websites that grow
-              businesses online.
+              I have been building WordPress websites for 9+ years. I live and
+              breathe WordPress.
             </p>
 
             <p className="mt-4 text-lg md:text-xl text-white/90 leading-relaxed max-w-[850px]">
-              With 9+ years of experience, I specialize in building custom
-              themes, plugins, and solutions that are easy to manage,
-              lightning-fast, and fully optimized.
+              I specialize in fast, secure, and scalable custom solutions that
+              are easy to manage.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">

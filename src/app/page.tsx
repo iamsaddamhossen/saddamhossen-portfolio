@@ -1,5 +1,6 @@
 import { Categories } from "@/components/categories";
 import { FullWidthSection } from "@/components/fullwidthsection";
+import { Hero } from "@/components/hero";
 import { HowIDo } from "@/components/howido";
 import { LatestPosts } from "@/components/latest-posts";
 import { SocialIcons } from "@/components/social-icons";
@@ -21,7 +22,7 @@ export default async function Home() {
     return (
       <>
         {/* ✅ No Hero here if it's already in layout */}
-        {/* <Hero /> */}
+        <Hero />
 
         {/* ✅ Testimonials - Limited width */}
         <section className="max-w-[1200px] mx-auto px-4 md:px-8">

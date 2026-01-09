@@ -1,0 +1,7 @@
+# Navigate to child theme
+cd /path/to/local/wordpress/wp-content/themes/twentytwentyfive-child/
+
+# Create .gitignore file
+nano .gitignore
+# or
+code .gitignore  # if using VS Code

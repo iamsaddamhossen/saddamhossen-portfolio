@@ -1,4 +1,4 @@
-# Saddam Hossen Portfolio - WordPress Child Theme
+# Saddam Hossen Portfolio
 
 Custom Twenty Twenty-Five child theme for [saddamhossen.dev](https://saddamhossen.dev)
 

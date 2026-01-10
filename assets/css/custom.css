@@ -1,0 +1,407 @@
+/**
+ * Portfolio Child Theme - COMPLETE PROFESSIONAL STYLES
+ * Custom WordPress Plugin Developer Brand Identity
+ * FULL MERGED VERSION — HEADER + FOOTER FIXED
+ */
+
+/* ===========================
+   BRAND COLORS & VARIABLES
+   =========================== */
+
+:root {
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-accent: #ec4899;
+  --color-dark: #0f172a;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+  --color-white: #ffffff;
+  --color-success: #10b981;
+  --color-bg-light: #f8fafc;
+
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  --gradient-subtle: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+
+  --shadow-sm: 0 2px 4px rgba(99, 102, 241, 0.1);
+  --shadow-md: 0 8px 16px rgba(99, 102, 241, 0.15);
+  --shadow-lg: 0 20px 40px rgba(99, 102, 241, 0.2);
+  --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.3);
+
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ===========================
+   GLOBAL RESET
+   =========================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* ===========================
+   REMOVE SECTION GAPS
+   =========================== */
+
+.wp-block-group,
+.wp-block-cover {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+main.wp-block-group {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ===========================
+   TYPOGRAPHY
+   =========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+/* ===========================
+   STICKY HEADER
+   =========================== */
+
+.site-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1.25rem 1.5rem;
+  transition: var(--transition-base);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.site-header > .wp-block-group {
+  flex-wrap: nowrap;
+}
+
+/* ===========================
+   LOGO + SITE TITLE
+   =========================== */
+
+.wp-block-site-logo img {
+  max-height: 56px;
+  width: auto;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .wp-block-site-logo img {
+    max-height: 60px;
+  }
+}
+
+.site-title a,
+.wp-block-site-title a {
+  font-weight: 800;
+  text-decoration: none !important;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+   NAVIGATION
+   =========================== */
+
+.wp-block-navigation-item a {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.wp-block-navigation-item a:hover {
+  color: var(--color-primary);
+}
+
+.wp-block-navigation-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.wp-block-navigation-item a:hover::after {
+  width: 70%;
+}
+
+/* ===========================
+   HEADER CTA
+   =========================== */
+
+.header-cta .wp-block-button__link {
+  background: var(--gradient-primary);
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  text-decoration: none;
+}
+
+.header-cta .wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ===========================
+   SCROLL TO TOP
+   =========================== */
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-base);
+  z-index: 999;
+}
+
+#scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===========================
+   HERO FLOAT
+   =========================== */
+
+.hero-image-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+.wp-block-button__link {
+  transition: var(--transition-base);
+  font-weight: 600;
+}
+
+/* ===========================
+   SERVICE / APPROACH / TESTIMONIALS
+   =========================== */
+
+.service-card,
+.approach-card {
+  transition: var(--transition-base);
+  background: #fff;
+}
+
+/* ===========================
+   CONTACT FORM
+   =========================== */
+
+.contact-form-container input,
+.contact-form-container textarea,
+.portfolio-contact-form input,
+.portfolio-contact-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  transition: var(--transition-base);
+}
+
+/* ===========================
+   FOOTER (PROFESSIONAL)
+   =========================== */
+
+.has-dark-background-color {
+  background: #0f172a !important;
+  color: #e5e7eb;
+}
+
+.site-footer {
+  font-size: 0.95rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.footer-description {
+  color: #cbd5f5;
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact li {
+  margin: 0;
+}
+
+.footer-contact a {
+  color: #c7d2fe;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--color-primary);
+}
+
+.site-footer a {
+  color: #c7d2fe;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.site-footer .wp-block-latest-posts li,
+.site-footer .wp-block-categories li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-view-all {
+  margin-top: 0.75rem;
+}
+.footer-view-all a {
+  font-weight: 600;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+}
+.footer-copyright {
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+/* Columns responsive */
+@media (max-width: 1024px) {
+  .wp-block-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .wp-block-column {
+    flex: 1 1 100%;
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 782px) {
+  .site-header {
+    padding: 0.9rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-cta {
+    display: none;
+  }
+}
+
+/* ===========================
+   ACCESSIBILITY
+   =========================== */
+
+*:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none !important;
+}
+.wp-block-site-logo a:focus,
+.wp-block-site-title a:focus,
+.wp-block-navigation a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.wp-block-navigation a:focus-visible,
+.wp-block-site-logo a:focus-visible,
+.wp-block-site-title a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: 6px;
+}

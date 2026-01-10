@@ -1,8 +1,9 @@
 <?php
 /**
- * Portfolio Theme Functions
+ * Portfolio Child Theme Functions
  * 
- * @package Portfolio_Theme
+ * @package Portfolio_Child_Theme
+ * @version 1.0.0
  */
 
 // Prevent direct access
@@ -11,64 +12,63 @@ if (!defined('ABSPATH')) {
 }
 
 // Theme constants
-define('PORTFOLIO_THEME_VERSION', '1.0.0');
-define('PORTFOLIO_THEME_DIR', get_stylesheet_directory());
-define('PORTFOLIO_THEME_URI', get_stylesheet_directory_uri());
+define('PORTFOLIO_CHILD_VERSION', '1.0.0');
+define('PORTFOLIO_CHILD_DIR', get_stylesheet_directory());
+define('PORTFOLIO_CHILD_URI', get_stylesheet_directory_uri());
 
 /**
- * Include required files
+ * Enqueue parent and child theme styles
  */
-require_once PORTFOLIO_THEME_DIR . '/inc/enqueue-scripts.php';
-require_once PORTFOLIO_THEME_DIR . '/inc/custom-post-types.php';
-require_once PORTFOLIO_THEME_DIR . '/inc/theme-functions.php';
-
-/**
- * Theme setup
- */
-function portfolio_theme_setup() {
-    // Add theme support
-    add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ));
-    add_theme_support('custom-logo');
-    add_theme_support('responsive-embeds');
-    add_theme_support('editor-styles');
+function portfolio_child_enqueue_styles() {
+    // Parent theme stylesheet
+    wp_enqueue_style(
+        'twentytwentyfive-style',
+        get_template_directory_uri() . '/style.css',
+        array(),
+        wp_get_theme()->parent()->get('Version')
+    );
     
-    // Register navigation menus
-    register_nav_menus(array(
-        'primary' => __('Primary Menu', 'portfolio-theme'),
-        'footer'  => __('Footer Menu', 'portfolio-theme'),
-    ));
+    // Child theme stylesheet
+    wp_enqueue_style(
+        'portfolio-child-style',
+        get_stylesheet_uri(),
+        array('twentytwentyfive-style'),
+        PORTFOLIO_CHILD_VERSION
+    );
     
-    // Set content width
-    if (!isset($content_width)) {
-        $content_width = 1200;
-    }
+    // Custom CSS
+    wp_enqueue_style(
+        'portfolio-custom-css',
+        PORTFOLIO_CHILD_URI . '/assets/css/custom.css',
+        array('portfolio-child-style'),
+        PORTFOLIO_CHILD_VERSION
+    );
     
-    // Add image sizes
-    add_image_size('portfolio-featured', 1200, 600, true);
-    add_image_size('portfolio-thumb', 600, 400, true);
+    // Google Fonts - Inter for modern typography
+    wp_enqueue_style(
+        'portfolio-fonts',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
+        array(),
+        null
+    );
+    
+    // Custom JavaScript
+    wp_enqueue_script(
+        'portfolio-custom-js',
+        PORTFOLIO_CHILD_URI . '/assets/js/portfolio.js',
+        array('jquery'),
+        PORTFOLIO_CHILD_VERSION,
+        true
+    );
 }
-add_action('after_setup_theme', 'portfolio_theme_setup');
+add_action('wp_enqueue_scripts', 'portfolio_child_enqueue_styles');
 
 /**
- * Register widget areas
+ * Include custom post types
  */
-function portfolio_register_sidebars() {
-    register_sidebar(array(
-        'name'          => __('Footer Widget Area', 'portfolio-theme'),
-        'id'            => 'footer-widgets',
-        'description'   => __('Appears in the footer section', 'portfolio-theme'),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-}
-add_action('widgets_init', 'portfolio_register_sidebars');
+require_once PORTFOLIO_CHILD_DIR . '/inc/custom-post-types.php';
+
+/**
+ * Include block patterns
+ */
+require_once PORTFOLIO_CHILD_DIR . '/inc/block-patterns.php';

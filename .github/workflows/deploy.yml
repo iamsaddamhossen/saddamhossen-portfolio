@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           # Specific path for Hostinger
-          server-dir: domains/saddamhossen.dev/public_html/wp-content/themes/twentytwentyfive-child/
+          server-dir: domains/saddamhossen.dev/public_html/wp-content/themes/twenty-twenty-five-child/

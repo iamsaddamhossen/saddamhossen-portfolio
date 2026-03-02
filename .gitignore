@@ -1,0 +1,21 @@
+# WordPress
+*.log
+.maintenance
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if adding build tools later)
+node_modules/
+npm-debug.log
+package-lock.json
